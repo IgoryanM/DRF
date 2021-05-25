@@ -10,8 +10,8 @@ class Project(models.Model):
 
 
 class Note(models.Model):
-    project = models.OneToOneField(Project, on_delete=models.CASCADE, verbose_name='проект')
-    user = models.OneToOneField(SiteUsers, on_delete=models.CASCADE, verbose_name='пользователь')
+    project = models.ForeignKey(Project, on_delete=models.CASCADE, verbose_name='проект')
+    user = models.ForeignKey(SiteUsers, on_delete=models.CASCADE, verbose_name='пользователь')
     text = models.TextField(max_length=300, verbose_name='текст заметки')
     created = models.DateTimeField(auto_now_add=True, verbose_name='создана')
     updated = models.DateTimeField(auto_now=True, verbose_name='изменена')
