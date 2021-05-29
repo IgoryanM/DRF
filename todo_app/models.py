@@ -4,6 +4,7 @@ from siteusers.models import SiteUsers
 
 
 class Project(models.Model):
+    id = models.AutoField(primary_key=True)
     title = models.CharField(max_length=100, verbose_name='название проекта')
     link = models.URLField(max_length=200, verbose_name='ссылка')
     users = models.ManyToManyField(SiteUsers, verbose_name='пользователи')

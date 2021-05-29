@@ -27,8 +27,8 @@ class NoteModelViewSet(ModelViewSet):
     queryset = Note.objects.all()
     serializer_class = NoteModelSerializer
     pagination_class = NoteLimitOffsetPagination
-    filterset_fields = ['project']
     filterset_class = DataFilter
+    filterset_fields = ['project']
 
     def destroy(self, request, pk=None, *args, **kwargs):
         note = get_object_or_404(Note, pk=pk)

@@ -5,7 +5,7 @@ from .models import Project, Note
 class ProjectModelSerializer(HyperlinkedModelSerializer):
     class Meta:
         model = Project
-        fields = '__all__'
+        fields = ('id', 'title', 'link', 'users')
 
 
 class NoteModelSerializer(HyperlinkedModelSerializer):
