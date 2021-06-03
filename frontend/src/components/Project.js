@@ -24,7 +24,6 @@ const ProjectTable = ({projects}) => {
                 <th>Title</th>
                 <th>Link</th>
                 <th>Users</th>
-                {console.log(filtered_items)}
             </tr>
             {filtered_items.map((project) => <ProjectItem project={project} />)}
         </table>
